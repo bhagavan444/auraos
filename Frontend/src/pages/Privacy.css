@@ -1,0 +1,222 @@
+/* ============================================================
+   AURAOS PRIVACY PAGE (WWDC 2026 AESTHETIC)
+   ============================================================ */
+
+.privacy-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography Scale ── */
+.privacy-label {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6e6e73;
+  margin-bottom: 24px;
+}
+
+.privacy-headline-massive {
+  font-size: clamp(64px, 10vw, 120px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin: 0;
+  line-height: 1.05;
+  color: #1d1d1f;
+}
+
+.privacy-headline-large {
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin: 0;
+  line-height: 1.1;
+  color: #1d1d1f;
+}
+
+.privacy-subtitle {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 500;
+  color: #6e6e73;
+  margin: 24px 0 0 0;
+  letter-spacing: -0.02em;
+}
+
+/* ── Layouts ── */
+.privacy-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.privacy-sticky-container {
+  position: relative;
+}
+
+.privacy-sticky-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* ── Visuals: The Orb ── */
+.privacy-orb {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f5f5f7, #6e6e73);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  margin: 80px auto 0;
+}
+
+/* ── Chapter 4: Flowing Abstraction ── */
+.privacy-flow-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.privacy-flow-word {
+  position: absolute;
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 500;
+  color: #1d1d1f;
+  letter-spacing: -0.02em;
+}
+
+/* ── Chapter 8: Transparency Layers ── */
+.privacy-layer-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.privacy-layer-word {
+  position: relative;
+  font-size: clamp(64px, 10vw, 120px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(29, 29, 31, 0.2);
+  mix-blend-mode: multiply;
+  line-height: 0.7;
+}
+
+/* ── Chapter 9: Controls Mockup ── */
+.privacy-controls-frame {
+  width: 100%;
+  max-width: 600px;
+  background: #f5f5f7;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  margin-top: 80px;
+  text-align: left;
+}
+
+.privacy-controls-header {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+}
+
+.privacy-control-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.privacy-control-item:last-child {
+  border-bottom: none;
+}
+
+.privacy-control-label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1d1d1f;
+}
+
+.privacy-control-desc {
+  font-size: 14px;
+  color: #6e6e73;
+  margin-top: 4px;
+}
+
+.privacy-control-toggle {
+  width: 50px;
+  height: 30px;
+  background: #34c759;
+  border-radius: 15px;
+  position: relative;
+}
+
+.privacy-control-toggle::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 2px;
+  right: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.privacy-control-action {
+  color: #ff3b30;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ── Button ── */
+.privacy-btn {
+  background-color: #1d1d1f;
+  color: #ffffff;
+  border: none;
+  border-radius: 980px;
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: -0.02em;
+  margin-top: 60px;
+}
+
+.privacy-btn:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}

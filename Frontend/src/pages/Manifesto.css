@@ -1,0 +1,94 @@
+/* ============================================================
+   AURAOS MANIFESTO PAGE (WWDC 2026 AESTHETIC)
+   ============================================================ */
+
+.manifesto-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography Scale ── */
+.manifesto-label {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6e6e73;
+  margin-bottom: 24px;
+}
+
+.manifesto-headline-massive {
+  font-size: clamp(64px, 10vw, 120px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin: 0;
+  line-height: 1.05;
+  color: #1d1d1f;
+}
+
+.manifesto-headline-large {
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin: 0;
+  line-height: 1.1;
+  color: #1d1d1f;
+}
+
+.manifesto-subtitle {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 500;
+  color: #6e6e73;
+  margin: 24px 0 0 0;
+  letter-spacing: -0.02em;
+}
+
+/* ── Layouts ── */
+.manifesto-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ── Visuals: The Orb ── */
+.manifesto-orb {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f5f5f7, #6e6e73);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  margin: 80px auto 0;
+}
+
+/* ── Button ── */
+.manifesto-btn {
+  background-color: #1d1d1f;
+  color: #ffffff;
+  border: none;
+  border-radius: 980px;
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: -0.02em;
+  margin-top: 60px;
+}
+
+.manifesto-btn:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}

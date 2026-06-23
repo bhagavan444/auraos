@@ -1,0 +1,670 @@
+/* ============================================================
+   AuraOS — WWDC 2026 Home  |  v2 — Apple-Level Refinement
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  --white:         #FFFFFF;
+  --gray-light:    #F5F5F7;
+  --charcoal:      #1d1d1f;
+  --gray-mid:      #6e6e73;
+  --gray-tertiary: #86868b;
+  --gray-border:   rgba(0, 0, 0, 0.08);
+  --black:         #000000;
+  --blue:          #0071e3;
+
+  /* SF Pro first, Inter as cross-platform fallback */
+  --font: -apple-system, "SF Pro Display", "SF Pro Text", "Inter",
+          "Helvetica Neue", Arial, sans-serif;
+
+  --ease-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ============================================================
+   RESET & GLOBAL
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--white);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar        { width: 5px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: rgba(0,0,0,0.10); border-radius: 3px; }
+
+.auraos-page {
+  background: var(--white);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ============================================================
+   WWDC STICKY SUB-NAV  (appears after hero leaves viewport)
+   44px  ·  Apple product sub-navigation
+   ============================================================ */
+.wwdc-subnav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border-bottom: 1px solid var(--gray-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(22px, 3.6vw);
+  z-index: 180;
+}
+
+.subnav-brand {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+.subnav-brand:hover { opacity: 0.68; }
+
+.subnav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.subnav-links span {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--gray-mid);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.22s ease;
+}
+.subnav-links span:hover { color: var(--charcoal); }
+
+.subnav-cta {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--blue);
+  border: none;
+  border-radius: 980px;
+  padding: 5px 13px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.22s ease, transform 0.2s ease;
+}
+.subnav-cta:hover  { opacity: 0.84; transform: scale(1.025); }
+.subnav-cta:active { transform: scale(0.97); }
+
+/* ============================================================
+   SHARED BUTTONS
+   ============================================================ */
+.btn-primary {
+  font-family: var(--font);
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: 980px;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 14px 28px;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: opacity 0.25s ease, transform 0.25s var(--ease-apple);
+}
+.btn-primary:hover  { opacity: 0.84; transform: scale(1.02); }
+.btn-primary:active { transform: scale(0.975); }
+
+.btn-secondary {
+  font-family: var(--font);
+  background: transparent;
+  color: var(--blue);
+  border: 1.5px solid rgba(0, 113, 227, 0.32);
+  border-radius: 980px;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 14px 28px;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: border-color 0.25s ease, transform 0.25s var(--ease-apple);
+}
+.btn-secondary:hover  { border-color: var(--blue); transform: scale(1.02); }
+.btn-secondary:active { transform: scale(0.975); }
+
+.btn-text-link {
+  font-family: var(--font);
+  background: none;
+  border: none;
+  color: var(--blue);
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: opacity 0.22s ease;
+}
+.btn-text-link:hover { opacity: 0.7; }
+
+/* ============================================================
+   SECTION 1  —  HERO
+   ============================================================ */
+.s-hero {
+  background: var(--white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 100px;
+  overflow: hidden;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 960px;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--gray-tertiary);
+  margin-bottom: 20px;
+  letter-spacing: 0em;
+}
+
+.hero-title {
+  font-size: clamp(80px, 13vw, 148px);
+  font-weight: 700;
+  letter-spacing: -0.056em;
+  line-height: 0.92;
+  color: var(--charcoal);
+  margin-bottom: 0;
+}
+
+/* ── ORB  —  dominant, 2× larger than v1 ── */
+.hero-orb-wrap {
+  width:  clamp(260px, 34vw, 420px);
+  height: clamp(260px, 34vw, 420px);
+  margin: 28px auto 28px;
+}
+
+.hero-orb {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: orbBreathe 8s ease-in-out infinite;
+  filter: drop-shadow(0 20px 64px rgba(0, 0, 0, 0.09));
+}
+
+@keyframes orbBreathe {
+  0%, 100% { transform: scale(1.00); filter: drop-shadow(0 20px 64px rgba(0,0,0,0.09)); }
+  50%       { transform: scale(1.045); filter: drop-shadow(0 28px 80px rgba(0,0,0,0.13)); }
+}
+
+.hero-headline {
+  margin-bottom: 20px;
+}
+
+.hero-headline p {
+  font-size: clamp(20px, 3vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.14;
+  color: var(--charcoal);
+}
+
+.hero-sub {
+  font-size: clamp(16px, 1.7vw, 19px);
+  font-weight: 400;
+  color: var(--gray-mid);
+  letter-spacing: -0.01em;
+  line-height: 1.55;
+  margin-bottom: 48px;
+}
+
+.hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ============================================================
+   SECTION 2  —  PRODUCT REVEAL
+   ============================================================ */
+.s-reveal {
+  background: var(--gray-light);
+  padding: 160px max(24px, 6vw) 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Reveal title is now the hero of this section — massive, centered */
+.reveal-title {
+  font-size: clamp(40px, 6.5vw, 92px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  color: var(--charcoal);
+  margin: 0 auto 72px;
+  max-width: 800px;
+}
+
+.reveal-screenshot-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.06),
+    0 40px 100px rgba(0,0,0,0.14),
+    0 4px 14px rgba(0,0,0,0.07);
+}
+
+.reveal-screenshot {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   SECTIONS 3, 4, 5  —  FEATURE SPLITS
+   ============================================================ */
+.s-feature { padding: 200px max(24px, 6vw); }
+.s-white   { background: var(--white); }
+.s-gray    { background: var(--gray-light); }
+
+/* Reasons gets extra vertical weight — it's the emotional peak */
+.s-black   { background: var(--black); padding: 240px max(24px, 6vw); }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-grid-reverse { grid-template-columns: 1.5fr 1fr; }
+.feature-grid-reverse .feature-copy-col { order: 2; }
+.feature-grid-reverse .feature-img-col  { order: 1; }
+
+.feature-word {
+  font-size: clamp(52px, 7.5vw, 96px);
+  font-weight: 700;
+  letter-spacing: -0.048em;
+  line-height: 1.0;
+  color: var(--charcoal);
+  margin-bottom: 28px;
+}
+
+/* Reasons word is even larger — it's the cinematic peak */
+.s-black .feature-word { font-size: clamp(60px, 9vw, 116px); }
+
+.feature-word-white { color: var(--white); }
+
+.feature-copy {
+  font-size: clamp(15px, 1.6vw, 19px);
+  font-weight: 400;
+  color: var(--gray-mid);
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  max-width: 280px;
+}
+
+.s-black .feature-copy { color: rgba(255,255,255,0.36); }
+
+/* ── Parallax wrappers ── */
+.screenshot-frame {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.065),
+    0 28px 72px rgba(0,0,0,0.13),
+    0 4px 14px rgba(0,0,0,0.055);
+}
+
+.screenshot-frame-dark {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.07),
+    0 40px 100px rgba(0,0,0,0.95),
+    0 6px 20px rgba(0,0,0,0.7);
+}
+
+.parallax-inner {
+  overflow: hidden;
+  border-radius: inherit;
+  height: 100%;
+}
+
+/* Scale up slightly so parallax travel has room */
+.parallax-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform-origin: center center;
+  scale: 1.13;
+  will-change: transform;
+}
+
+/* ============================================================
+   SECTION 6  —  PRODUCT PHILOSOPHY  (typography only)
+   ============================================================ */
+.s-philosophy {
+  background: var(--white);
+  padding: 240px max(24px, 8vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.philosophy-inner {
+  text-align: center;
+  max-width: 860px;
+}
+
+.philosophy-line-dim {
+  font-size: clamp(24px, 3.8vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--gray-tertiary);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.philosophy-aura-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.philosophy-line-main {
+  font-size: clamp(30px, 5vw, 68px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.15;
+  color: var(--charcoal);
+}
+
+/* ============================================================
+   SECTION 7  —  ENGINEERING  (new premium section)
+   ============================================================ */
+.s-engineering {
+  background: var(--gray-light);
+  padding: 180px max(24px, 8vw);
+}
+
+.eng-eyebrow {
+  font-size: clamp(16px, 2vw, 26px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--gray-mid);
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.eng-list {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.eng-item {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.eng-item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.eng-item-number {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gray-tertiary);
+  letter-spacing: 0.06em;
+  min-width: 24px;
+  user-select: none;
+}
+
+.eng-item-label {
+  font-size: clamp(22px, 3.2vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--charcoal);
+  line-height: 1.2;
+}
+
+/* ============================================================
+   WWDC TRANSITION  —  pure typography bridge
+   Between Understands and Reasons.
+   No image. No decoration. Only words.
+   ============================================================ */
+.s-transition {
+  background: var(--white);
+  padding: 200px max(24px, 8vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transition-inner {
+  text-align: center;
+  max-width: 860px;
+}
+
+.transition-line {
+  font-size: clamp(26px, 4.2vw, 58px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--gray-tertiary);
+  margin-bottom: 10px;
+}
+
+.transition-line-emphasis {
+  font-size: clamp(26px, 4.2vw, 58px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--charcoal);
+}
+
+/* ============================================================
+   SECTION 9  —  ARCHITECTURE  (fullscreen word reveals)
+   Each word occupies the entire viewport. One at a time.
+   ============================================================ */
+.arch-scroll-section {
+  position: relative;
+  height: 500vh;           /* 5 words × 100vh each */
+  background: var(--white);
+}
+
+.arch-sticky-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  /* Must be position relative so absolute children (words) are contained */
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Ensure it's a containing block */
+  isolation: isolate;
+}
+
+
+/* Each word fills the sticky viewport — one at a time */
+.arch-reveal-word {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;   /* explicit instead of inset shorthand */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(68px, 11.5vw, 148px);
+  font-weight: 700;
+  letter-spacing: -0.054em;
+  color: var(--charcoal);
+  text-align: center;
+  pointer-events: none;
+  will-change: opacity, transform;
+  line-height: 1;
+  z-index: 1;
+}
+
+/* "Intelligence." — the final reveal — no change in weight,
+   restraint IS the premium feel */
+.arch-reveal-final { color: var(--charcoal); }
+
+/* Arch Dots (progress indicator) */
+.arch-dots {
+  position: absolute;
+  bottom: max(48px, 6vh);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 2;
+}
+
+.arch-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gray-tertiary);
+  opacity: 0.25;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.arch-dot-active {
+  opacity: 0.8;
+  transform: scale(1.3);
+}
+
+
+/* ============================================================
+   SECTION 10  —  FINAL REVEAL
+   ============================================================ */
+.s-final {
+  background: var(--white);
+  padding: 180px max(24px, 8vw) 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--gray-border);
+}
+
+.final-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.final-orb-wrap {
+  width:  clamp(80px, 11vw, 140px);
+  height: clamp(80px, 11vw, 140px);
+  margin-bottom: 36px;
+}
+
+.final-orb {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: orbBreathe 8s ease-in-out infinite;
+  filter: drop-shadow(0 10px 32px rgba(0,0,0,0.09));
+}
+
+.final-title {
+  font-size: clamp(40px, 6.5vw, 96px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.03;
+  color: var(--charcoal);
+  margin-bottom: 52px;
+}
+
+.final-btns {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ============================================================
+   RESPONSIVE  —  Tablet ≤ 960px
+   ============================================================ */
+@media (max-width: 960px) {
+  .subnav-links { display: none; }
+  .wwdc-subnav  { padding: 0 20px; }
+
+  .feature-grid,
+  .feature-grid-reverse { grid-template-columns: 1fr; gap: 48px; }
+
+  .feature-grid-reverse .feature-copy-col,
+  .feature-grid-reverse .feature-img-col { order: unset; }
+
+  .feature-copy { max-width: 100%; }
+
+  .s-feature     { padding: 120px max(24px, 6vw); }
+  .s-philosophy  { padding: 160px max(24px, 8vw); }
+  .s-engineering { padding: 120px max(24px, 8vw); }
+  .s-recruiter   { padding: 120px max(24px, 8vw); }
+  .s-final       { padding: 120px max(24px, 8vw) 160px; }
+}
+
+/* ============================================================
+   RESPONSIVE  —  Mobile ≤ 600px
+   ============================================================ */
+@media (max-width: 600px) {
+  .hero-title          { font-size: 68px; }
+  .hero-headline p     { font-size: 22px; }
+  .hero-orb-wrap       { width: 230px; height: 230px; }
+  .hero-btns           { flex-direction: column; gap: 10px; }
+
+  .feature-word        { font-size: 48px; }
+  .feature-copy        { font-size: 15px; }
+
+  .philosophy-line-dim  { font-size: 24px; }
+  .philosophy-line-main { font-size: 28px; }
+
+  .reveal-title         { font-size: 30px; }
+  .final-title          { font-size: 36px; }
+
+  .arch-reveal-word     { font-size: 60px; }
+  .eng-item-label       { font-size: 22px; }
+
+  .final-btns { flex-direction: column; gap: 14px; }
+}

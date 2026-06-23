@@ -1,0 +1,271 @@
+/* ============================================================
+   APPLE PRODUCT NAVBAR (WWDC 2026)
+   ============================================================ */
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.navbar-content {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* ── Logo ── */
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-logo {
+  height: 34px;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 1;
+}
+
+/* ── Links (Center) ── */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  height: 100%;
+}
+
+.navbar-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-link {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #1d1d1f;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+/* ── Right Actions ── */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  color: #1d1d1f;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.nav-icon:hover {
+  opacity: 1;
+}
+
+.navbar-cta-pill {
+  background-color: #1d1d1f;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 980px;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar-cta-pill:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* ── Mega Menu ── */
+.mega-menu-overlay {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  z-index: 999;
+}
+
+.mega-menu-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  display: flex;
+  gap: 80px;
+}
+
+.mega-menu-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.mega-menu-title {
+  font-size: 12px;
+  color: #86868b;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.mega-menu-link {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  text-decoration: none;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  transition: color 0.2s;
+}
+
+.mega-menu-link:hover {
+  color: #0066cc;
+}
+
+.mega-menu-sublink {
+  font-size: 12px;
+  color: #1d1d1f;
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.mega-menu-sublink:hover {
+  color: #0066cc;
+}
+
+/* ── Mobile View ── */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+@media (max-width: 1024px) {
+  .navbar-links, .navbar-cta-pill {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 48px);
+  background: #ffffff;
+  z-index: 998;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.mobile-nav-link {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Profile Dropdown */
+.profile-dropdown-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-profile-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.nav-profile-img:hover {
+  transform: scale(1.05);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  z-index: 1000;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 10px 16px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #ff3b30;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 59, 48, 0.1);
+}

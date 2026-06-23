@@ -1,0 +1,240 @@
+/* ============================================================
+   AURAOS DEMO PAGE (WWDC 2026 AESTHETIC)
+   ============================================================ */
+
+.demo-page {
+  background-color: #ffffff;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography Scale ── */
+.demo-hero-headline {
+  font-size: clamp(80px, 10vw, 160px);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+  color: #1d1d1f;
+  margin: 0;
+  text-align: center;
+}
+
+.demo-section-headline {
+  font-size: clamp(64px, 8vw, 120px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: #1d1d1f;
+  margin: 0;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.demo-subheadline {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 500;
+  color: #6e6e73;
+  letter-spacing: -0.01em;
+  max-width: 700px;
+  margin: 24px auto 0;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.demo-statement {
+  font-size: clamp(48px, 6vw, 96px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #1d1d1f;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.demo-statement-secondary {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #6e6e73;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* ── Sections ── */
+.demo-hero-section {
+  padding-top: 180px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ── UI Mockup Container ── */
+.demo-workspace-showcase {
+  width: 100%;
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f7;
+}
+
+.demo-screenshot-container {
+  width: 100%;
+  max-width: 1400px;
+  border-radius: 24px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.demo-screenshot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ── 500vh Scroll-Locked Cinematic Journey ── */
+.demo-journey-container {
+  height: 500vh; 
+  position: relative;
+  background-color: #ffffff;
+}
+
+.demo-journey-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+/* ── Real Demo Flow ── */
+.demo-real-flow-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 120px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ── 500vh Sticky Words Section ── */
+.demo-sticky-container {
+  height: 500vh; 
+  position: relative;
+  background-color: #1d1d1f;
+}
+
+.demo-sticky-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.demo-massive-word {
+  font-size: clamp(64px, 12vw, 200px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+  text-transform: uppercase;
+  position: absolute;
+}
+
+/* ── Standard 100vh Chapters ── */
+.demo-chapter {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.demo-chapter-left {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 120px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.demo-chapter-left .demo-statement, 
+.demo-chapter-left .demo-statement-secondary {
+  text-align: left;
+}
+
+/* ── Finale Reveal ── */
+.demo-finale-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1d1d1f;
+  color: #ffffff;
+  padding: 120px 20px;
+  overflow: hidden;
+}
+
+.demo-buttons-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 80px;
+}
+
+.demo-btn-primary {
+  background-color: #ffffff;
+  color: #1d1d1f;
+  border: none;
+  border-radius: 980px;
+  padding: 20px 48px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.demo-btn-primary:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.demo-btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 980px;
+  padding: 20px 48px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.demo-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

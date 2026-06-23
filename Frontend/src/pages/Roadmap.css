@@ -1,0 +1,227 @@
+/* ============================================================
+   AURAOS ROADMAP PAGE (WWDC 2026 AESTHETIC)
+   ============================================================ */
+
+.roadmap-page {
+  background-color: #ffffff;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography Scale ── */
+.roadmap-hero-headline {
+  font-size: clamp(80px, 10vw, 160px);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+  color: #1d1d1f;
+  margin: 0;
+  text-align: center;
+}
+
+.roadmap-section-headline {
+  font-size: clamp(64px, 8vw, 120px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: #1d1d1f;
+  margin: 0;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.roadmap-subheadline {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 500;
+  color: #6e6e73;
+  letter-spacing: -0.01em;
+  max-width: 700px;
+  margin: 24px auto 0;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.roadmap-statement {
+  font-size: clamp(48px, 6vw, 96px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #1d1d1f;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.roadmap-statement-secondary {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #6e6e73;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* ── Sections ── */
+.roadmap-hero-section {
+  padding-top: 180px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ── Standard 100vh Chapters ── */
+.roadmap-chapter {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.roadmap-chapter-left {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 120px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.roadmap-chapter-left .roadmap-statement, 
+.roadmap-chapter-left .roadmap-statement-secondary {
+  text-align: left;
+}
+
+/* ── Narrative Stack Sequence (Compressed) ── */
+.roadmap-stack-sequence {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px;
+  background-color: #f5f5f7;
+}
+
+/* ── 400vh Scroll-Locked Signature Moment ── */
+.roadmap-sticky-container {
+  height: 400vh; 
+  position: relative;
+  background-color: #000000;
+}
+
+.roadmap-sticky-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.roadmap-massive-word {
+  font-size: clamp(64px, 12vw, 200px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+  text-transform: uppercase;
+  position: absolute;
+}
+
+/* ── Massive WWDC Moment (New) ── */
+.roadmap-wwdc-moment {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #1d1d1f;
+  padding: 120px 20px;
+}
+
+.roadmap-wwdc-statement {
+  font-size: clamp(80px, 14vw, 240px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  color: #1d1d1f;
+  line-height: 0.95;
+  text-align: center;
+  max-width: 1400px;
+  margin: 0;
+}
+
+/* ── Convergence Flow ── */
+.roadmap-convergence-section {
+  min-height: 120vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1d1d1f;
+  color: #ffffff;
+  padding: 120px 20px;
+}
+
+.roadmap-convergence-title {
+  font-size: clamp(80px, 12vw, 220px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+/* ── Destination Flow ── */
+.roadmap-destination-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px;
+  background-color: #f5f5f7;
+  text-align: center;
+}
+
+/* ── Finale Reveal ── */
+.roadmap-finale-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #1d1d1f;
+  padding: 120px 20px;
+  overflow: hidden;
+}
+
+.roadmap-btn-primary {
+  background-color: #1d1d1f;
+  color: #ffffff;
+  border: none;
+  border-radius: 980px;
+  padding: 20px 48px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  margin-top: 80px;
+}
+
+.roadmap-btn-primary:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
