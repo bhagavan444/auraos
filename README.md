@@ -229,4 +229,3 @@ Building the Intelligence Layer for Human Potential.
 
 ---
 
-This style feels significantly more like a premium product README than a student project README and aligns with the Apple-inspired positioning you've established across AuraOS, CareerOS, GitHub, LinkedIn, and your portfolio.
