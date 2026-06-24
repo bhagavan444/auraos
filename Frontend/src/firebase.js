@@ -36,13 +36,13 @@ import {
 
 // 🔹 Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAO5Jxn6_jCbDxCtD2hyUtQK0qWCTVJGMU",
-  authDomain: "carrerpath-7ca2e.firebaseapp.com",
-  projectId: "carrerpath-7ca2e",
-  storageBucket: "carrerpath-7ca2e.appspot.com",
-  messagingSenderId: "549910884669",
-  appId: "1:549910884669:web:c894751454a9ef3a3d5554",
-  measurementId: "G-3631J68JMP"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 // 🔹 Initialize Firebase
